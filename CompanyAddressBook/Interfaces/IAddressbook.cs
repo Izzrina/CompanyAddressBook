@@ -1,20 +1,36 @@
-﻿using System;
+﻿using CompanyAddressBook.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CompanyAddressBook.Models;
 
 namespace CompanyAddressBook.Interfaces
 {
+    /// <summary>
+    /// Defines the contract for managing addresses in the company address book.
+    /// </summary>
     internal interface IAddressbook
     {
-        Address AddAddress();
+        /// <summary>
+        /// Displays all addresses in the address book.
+        /// </summary>
+        void ShowAllAddresses();
 
-        void RemoveAddress(Address address);
+        /// <summary>
+        /// Adds a new address to the address book.
+        /// </summary>
+        /// <param name="adress">The address to add.</param>
+        void AddAddress(Address adress);
 
-        Address FindAddressByPhoneNumber(string phone);
+        /// <summary>
+        /// Finds a single address based on first and last name.
+        /// </summary>
+        /// <param name="firstName">The first name to search for.</param>
+        /// <param name="lastName">The last name to search for.</param>
+        /// <returns>The matching <see cref="Address"/>, or null if not found.</returns>
+        Address FindAddress(string firstName, string lastName);
 
-        List<Address> FindAddressByLastName(string lastName);
+        /// <summary>
+        /// Removes an address from the address book.
+        /// </summary>
+        /// <param name="adress">The address to remove.</param>
+        void RemoveAddress(Address adress);
     }
 }

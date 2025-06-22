@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\CompanyAddressBook.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -74,21 +75,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exceptions\BaseException.cs" />
+    <Compile Include="Exceptions\AddressNotFoundException.cs" />
+    <Compile Include="Exceptions\DuplicateNameException.cs" />
+    <Compile Include="Exceptions\DuplicatePhoneNumber.cs" />
+    <Compile Include="Exceptions\SaveFailedException.cs" />
     <Compile Include="Interfaces\IAddressbook.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AddressBook.cs" />
+    <Compile Include="Utils\ConsoleColors.cs" />
     <Compile Include="Utils\JsonUtils.cs" />
+    <Compile Include="Views\ConsoleUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Data\AddressList.json" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
