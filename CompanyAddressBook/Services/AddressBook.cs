@@ -104,13 +104,12 @@ namespace CompanyAddressBook.Services
         /// Removes an <see cref="Address"/> from the <see cref="_addresses"/> list after verifying its existence
         /// using the <see cref="FindAddress(string, string)"/> method, and saves the updated list to the JSON file defined by <see cref="FilePath"/>.
         /// </summary>
-        /// <param name="firstName">The first name of the contact to remove.</param>
-        /// <param name="lastName">The last name of the contact to remove.</param>
+        /// <param name="address">The <see cref="Address"/> object to be removed from the address list</param>
         /// <exception cref="AddressNotFoundException">
-        /// Thrown if no address entry with the given first and last name is found (case-insensitive).
+        /// Thrown if no address entry with the given first and last name is found (case-insensitive)
         /// </exception>
         /// /// <remarks>
-        /// This method uses case-insensitive comparison for both the first and last name.
+        /// This method uses case-insensitive comparison for both the first and last name
         /// </remarks>
         public void RemoveAddress(Address address)
         {
